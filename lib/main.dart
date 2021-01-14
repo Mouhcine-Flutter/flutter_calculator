@@ -27,9 +27,9 @@ class _HomePageState extends State<HomePage> {
 
   final List<String> buttons = [
     'AC',
+    '^',
     '%',
     '÷',
-    'C',
     '7',
     '8',
     '9',
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     '2',
     '3',
     '+',
-    'ANS',
+    'C',
     '0',
     ',',
     '=',
@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                     }
 
                     // Delete Button
-                    else if (index == 3) {
+                    else if (index == 16) {
                       return MyButton(
                         buttonTapped: () {
                           setState(() {
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                         buttonText: buttons[index],
                         color: isOperator(buttons[index])
                             ? Colors.yellow[800]
-                            : Colors.grey,
+                            : Colors.grey[500],
                         textColor: isOperator(buttons[index])
                             ? Colors.white
                             : Colors.white,
@@ -162,7 +162,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool isOperator(String x) {
-    if (x == '%' || x == '÷' || x == '×' || x == '-' || x == '+' || x == '=') {
+    if (x == '%' || x == '÷' || x == '×' || x == '-' || x == '+' || x == '=' || x == '^') {
       return true;
     }
     return false;
